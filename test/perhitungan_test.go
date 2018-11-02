@@ -68,4 +68,39 @@ func TestPerhitungan(t *testing.T) {
 			fmt.Printf("%v * %v = Got : %v , Want = %v\n", input.a, input.b, dapatHasil, input.got)
 		}
 	})
+
+	t.Run("Test untuk Fungsi max ", func(t *testing.T) {
+		var testMax = []struct {
+			a           []int
+			hasilMaunya int
+		}{
+			{a: []int{1, 4, 6, 8, 7}, hasilMaunya: 8},
+			{a: []int{2, 4, 5, 12, 7}, hasilMaunya: 12},
+		}
+
+		for _, input := range testMax {
+			dapatHasil := model.Max(input.a)
+			if dapatHasil != input.hasilMaunya {
+				t.Fatalf("%v Got : %v , want : %v\n ", input.a, dapatHasil, input.hasilMaunya)
+			}
+			fmt.Printf("%v Got : %v , want : %v\n ", input.a, dapatHasil, input.hasilMaunya)
+		}
+	})
+	t.Run("Test untuk Fungsi max ", func(t *testing.T) {
+		var testMin = []struct {
+			a           []int
+			hasilMaunya int
+		}{
+			{a: []int{1, 4, 6, 8, 7}, hasilMaunya: 1},
+			{a: []int{2, 4, 5, 12, 7}, hasilMaunya: 2},
+		}
+
+		for _, input := range testMin {
+			dapatHasil := model.Min(input.a)
+			if dapatHasil != input.hasilMaunya {
+				t.Fatalf("%v Got : %v , want : %v\n ", input.a, dapatHasil, input.hasilMaunya)
+			}
+			fmt.Printf("%v Got : %v , want : %v\n ", input.a, dapatHasil, input.hasilMaunya)
+		}
+	})
 }

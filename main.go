@@ -7,9 +7,10 @@ import (
 
 var c, d = 20, 10
 var e, f = 11, 2
+var g = []int{4, 5, 6, 17, 10}
 
 func main() {
-	switching()
+	fmt.Print(model.Max(g))
 }
 
 func loop() {
