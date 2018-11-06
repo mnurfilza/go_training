@@ -3,14 +3,19 @@ package main
 import (
 	"Training_go/model"
 	"fmt"
+	"time"
 )
 
 var c, d = 20, 10
 var e, f = 11, 2
 var g = []int{4, 5, 6, 17, 10}
+var w = 4
+var tanggalLahir = time.Date(1955, 5, 7, 0, 0, 0, 0, time.UTC)
+var s = "abc"
+var a = 2
 
 func main() {
-	fmt.Print(model.Max(g))
+	fmt.Print(model.TambahString(a, s))
 }
 
 func loop() {
@@ -61,6 +66,11 @@ func switching() {
 	case 9:
 		pangkat := model.Pemangkatan(e, f)
 		fmt.Printf("Hasil Dari Fungsi Penjumlahan = %d", pangkat)
+	case 10:
+		r := 5
+
+		fac := model.Fac(r)
+		fmt.Printf("Hasil Dari Fungsi Penjumlahan = %d", fac)
 	default:
 		fmt.Print("Angka tidak ada")
 	}

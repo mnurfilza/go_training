@@ -1,5 +1,10 @@
 package model
 
+import (
+	"fmt"
+	"time"
+)
+
 func Penjumlahan(a, b int) int {
 	return a + b
 
@@ -49,4 +54,39 @@ func Min(m []int) int {
 		}
 	}
 	return minimum
+}
+
+func Fac(a int) int {
+
+	hasil := 1
+	for i := 1; i <= a; i++ {
+		hasil = hasil * i
+	}
+	return hasil
+
+}
+
+func Ganjil(n int) (bilanganGanjil, bilanganGenap []int) {
+
+	for i := 0; i < n; i++ {
+		hasil := (i * 2)
+		bilanganGanjil = append(bilanganGanjil, hasil+1)
+		bilanganGenap = append(bilanganGenap, hasil)
+	}
+	return
+}
+func TanggalLahir(tanggalLahir time.Time) string {
+	tahun, month, day := tanggalLahir.Date()
+	bulan := int(month)
+	dateBorn := fmt.Sprintf("%v-%v-%v", tahun, bulan, day)
+	return dateBorn
+
+}
+func TambahString(a int, s string) string {
+	var hasil string
+
+	for i := 0; i < a; i++ {
+		hasil += s
+	}
+	return hasil
 }
