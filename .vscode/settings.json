@@ -1,3 +1,4 @@
 {
-    "github.customPullRequestTitle": true
+    "github.customPullRequestTitle": true,
+    "svn.ignoreMissingSvnWarning": true
 }

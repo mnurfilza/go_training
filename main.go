@@ -14,8 +14,10 @@ var tanggalLahir = time.Date(1955, 5, 7, 0, 0, 0, 0, time.UTC)
 var s = "abc"
 var a = 2
 
+var S = model.Segitiga{Alas: 6, Sisi: 5}
+
 func main() {
-	fmt.Print(model.TambahString(a, s))
+	fmt.Printf("Keliling  = %v ", S.TinggiSegitiga())
 }
 
 func loop() {
