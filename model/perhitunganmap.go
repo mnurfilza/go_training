@@ -2,6 +2,8 @@ package model
 
 import (
 	"errors"
+	"fmt"
+	"strings"
 )
 
 var buatMap = make(map[string]interface{})
@@ -42,4 +44,21 @@ func PerhitunganMapSegitiga(s string, alas int, sisi int) (interface{}, error) {
 	default:
 		return nil, errors.New("Key tidak ada!")
 	}
+}
+
+func PerhitunganMapMahasiswa(bio map[string]Mahasiswa) string {
+	var hasil string
+	for index, value := range bio {
+		hasil += fmt.Sprintf("%v %v", index, value)
+	}
+	return hasil
+}
+
+func WordCount(s string) map[string]int {
+	Map := make(map[string]int)
+	theSplit := strings.Fields(s)
+	for _, nilai := range theSplit {
+		Map[nilai] = Map[nilai] + 1
+	}
+	return Map
 }

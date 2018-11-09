@@ -1,8 +1,8 @@
 package test
 
 import (
-	"Training_go/model"
 	"fmt"
+	"go_training/model"
 	"testing"
 	"time"
 )

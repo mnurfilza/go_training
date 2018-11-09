@@ -1,8 +1,8 @@
 package test
 
 import (
-	"Training_go/model"
 	"fmt"
+	"go_training/model"
 	"testing"
 )
 
@@ -47,6 +47,31 @@ func TestPerhitunganMap(t *testing.T) {
 				t.Fatalf("Hasil Maunya %v, Hasil Dapatnya %v, errornya %v\n", input.hasilMaunya, dapatHasil, errorDapatnya)
 			}
 			fmt.Printf("Hasil Maunya %v, Hasil Dapatnya %v, errornya %v\n", input.hasilMaunya, dapatHasil, errorDapatnya)
+		}
+
+	})
+
+}
+
+func TestStringer(t *testing.T) {
+
+	t.Run("Testing The Stringer ", func(t *testing.T) {
+		var testStringer = []struct {
+			bio         map[string]model.Mahasiswa
+			hasilMaunya string
+		}{
+			{bio: map[string]model.Mahasiswa{"Nama": {Universitas: "", SMA: "", SMP: "", SD: ""}},
+				hasilMaunya: "Nama Saya kuliah di , SMA saya di , SMP saya di , SD saya di "},
+
+			{bio: map[string]model.Mahasiswa{"adae": {Universitas: "UA", SMA: "SMAN3", SMP: "SMPN5", SD: "SDAT"}},
+				hasilMaunya: "adae Saya kuliah di UA, SMA saya di SMAN3, SMP saya di SMPN5, SD saya di SDAT"},
+		}
+		for _, input := range testStringer {
+			dapatHasil := model.PerhitunganMapMahasiswa(input.bio)
+			if dapatHasil != input.hasilMaunya {
+				t.Fatalf("Got: %v,\n Want: %v,\n", dapatHasil, input.hasilMaunya)
+			}
+			fmt.Printf("Got: %v, Want: %v\n", dapatHasil, input.hasilMaunya)
 		}
 
 	})

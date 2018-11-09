@@ -1,8 +1,8 @@
 package main
 
 import (
-	"Training_go/model"
 	"fmt"
+	"go_training/model"
 	"time"
 )
 
@@ -15,9 +15,13 @@ var s = "abc"
 var a = 2
 
 var S = model.Segitiga{Alas: 6, Sisi: 5}
+var x = map[string]model.Mahasiswa{
+	"Nama": {Universitas: "UI", SMA: "Sman45", SMP: "smpn1", SD: "sd2"},
+	"aaan": {Universitas: "UA", SMA: "Sman46", SMP: "smpn2", SD: "sd3"},
+}
 
 func main() {
-	fmt.Printf("Keliling  = %v ", S.TinggiSegitiga())
+	fmt.Print(model.PerhitunganMapMahasiswa(x))
 }
 
 func loop() {

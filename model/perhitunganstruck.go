@@ -1,6 +1,9 @@
 package model
 
-import "math"
+import (
+	"fmt"
+	"math"
+)
 
 type Balok struct {
 	Panjang int
@@ -11,6 +14,13 @@ type Balok struct {
 type Segitiga struct {
 	Alas int
 	Sisi int
+}
+
+type Mahasiswa struct {
+	Universitas string
+	SMA         string
+	SD          string
+	SMP         string
 }
 
 func (b *Balok) Keliling() int {
@@ -37,4 +47,8 @@ func (s *Segitiga) TinggiSegitiga() float64 {
 func (s *Segitiga) LuasSegitiga() float64 {
 	tinggi := Segitiga{Alas: s.Alas, Sisi: s.Sisi}
 	return 0.5 * float64(s.Alas) * tinggi.TinggiSegitiga()
+}
+
+func (bio Mahasiswa) String() string {
+	return fmt.Sprintf("Saya kuliah di %v, SMA saya di %v, SMP saya di %v, SD saya di %v", bio.Universitas, bio.SMA, bio.SMP, bio.SD)
 }
